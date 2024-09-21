@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Country {
+  id                   Int      @id @default(autoincrement())
+  name_common          String
+  name_official        String
+  native_name_eng      String
+  tld                  Json
+  cca2                 String
+  ccn3                 String
+  cca3                 String
+  independent          Boolean
+  status               String
+  un_member            Boolean
+  currencies           Json
+  idd_root             String
+  idd_suffixes         Json
+  capital              Json
+  alt_spellings        Json
+  region               String
+  languages            Json
+  translations         Json
+  latlng               Json
+  landlocked           Boolean
+  area                 Float
+  demonyms             Json
+  flag                 String
+  maps                 Json
+  population           Int
+  car_signs            Json
+  car_side             String
+  timezones            Json
+  continents           Json
+  flags_png            String
+  flags_svg            String
+  coat_of_arms         Json
+  start_of_week        String
+  capital_info_latlng  Json
+}
+
+
+
+
